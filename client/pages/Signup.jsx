@@ -30,7 +30,7 @@ function Signup() {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
 
-      navigate('/dashboard')
+      navigate('/onboarding')
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed')
     } finally {

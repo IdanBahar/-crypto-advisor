@@ -2,14 +2,14 @@
   max-width: 450px;
   margin: 80px auto;
   padding: var(--spacing-2xl);
-  background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  border: 1px solid var(--border-light);
+  // background: var(--bg-card);
+  // border-radius: var(--radius-xl);
+  // box-shadow: var(--shadow-xl);
+  // border: 1px solid var(--border-light);
 
   h2 {
     text-align: center;
-    color: var(--text-primary);
+    color: var(--text-light);
     margin-bottom: var(--spacing-xl);
     font-size: 2rem;
   }
@@ -32,7 +32,7 @@
   label {
     display: block;
     margin-bottom: var(--spacing-sm);
-    color: var(--text-secondary);
+    color: var(--text-light);
     font-weight: 500;
     font-size: 0.95rem;
   }
@@ -96,7 +96,7 @@
 .footer-text {
   margin-top: var(--spacing-xl);
   text-align: center;
-  color: var(--text-secondary);
+  color: var(--text-light-sm);
   font-size: 0.95rem;
 
   a {

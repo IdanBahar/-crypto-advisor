@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Greeting from '../components/Greeting'
 
 function Dashboard() {
   const [user, setUser] = useState(null)
@@ -28,7 +29,9 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <h1>Welcome, {user.name}</h1>
+        <h1>
+          <Greeting name={user.name} />
+        </h1>
         <button onClick={handleLogout} className="logout-button">
           Logout
         </button>

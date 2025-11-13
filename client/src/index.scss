@@ -1,6 +1,6 @@
-@import '../src/assets/styles/setup/__base.scss';
-
-//Pages
-@import '../src/assets/styles/pages/Dashboard.scss';
-@import '../src/assets/styles/pages/Login.scss';
-@import '../src/assets/styles/pages/Signup.scss';
+@use '../src/assets/styles/setup/_base.scss';
+@use '../src/assets/styles/setup/__vars.scss';
+@use '../src/assets/styles/pages/Login.scss';
+@use '../src/assets/styles/pages/Signup.scss';
+@use '../src/assets/styles/pages/Dashboard.scss';
+@use '../src/assets/styles/pages/Onboarding.scss';

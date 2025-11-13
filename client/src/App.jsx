@@ -7,6 +7,7 @@ import {
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Dashboard from '../pages/Dashboard'
+import Onboarding from '../pages/OnBoarding'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>

@@ -29,7 +29,11 @@ function Login() {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', JSON.stringify(response.data.user))
 
-      navigate('/dashboard')
+      if (response.data.user.hasCompletedOnboarding) {
+        navigate('/dashboard')
+      } else {
+        navigate('/onboarding')
+      }
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed')
     } finally {
