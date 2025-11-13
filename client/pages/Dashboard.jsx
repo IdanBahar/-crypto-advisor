@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../src/assets/styles/Dashboard.scss'
 
 function Dashboard() {
   const [user, setUser] = useState(null)
