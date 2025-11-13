@@ -13,6 +13,17 @@
     margin-bottom: var(--spacing-xl);
     font-size: 2rem;
   }
+
+  @media (max-width: 600px) {
+    padding: var(--spacing-xl);
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .form-group {
