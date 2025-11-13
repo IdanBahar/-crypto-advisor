@@ -1,0 +1,100 @@
+.signup-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: var(--spacing-2xl);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-blue);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.error-message {
+  color: var(--primary-red);
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  border-left: 4px solid var(--primary-red);
+}
+
+.submit-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  background: var(--border-medium);
+  cursor: not-allowed;
+}
+
+.footer-text {
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer-text a {
+  color: var(--primary-blue);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.footer-text a:hover {
+  color: var(--secondary-blue);
+}
