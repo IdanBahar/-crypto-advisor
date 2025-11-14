@@ -1,0 +1,137 @@
+.coin-prices-card {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 50, 0.7),
+    rgba(20, 20, 40, 0.7)
+  );
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @media (max-width: 768px) {
+    padding: 30px 12px 12px 12px;
+  }
+
+  @media (max-width: 380px) {
+    padding: 12px;
+  }
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 380px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.coin-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(96, 165, 250, 0.2);
+    border-color: rgba(96, 165, 250, 0.3);
+  }
+
+  .coin-header {
+    margin-bottom: 12px;
+  }
+
+  .coin-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: capitalize;
+  }
+
+  .coin-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+  }
+  .coin-change {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &.negative {
+      color: var(--text-red);
+    }
+    &.positive {
+      color: var(--text-green);
+    }
+  }
+}
+
+.change-label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-left: 5px;
+  color: var(--text-light);
+}
+
+.coin-marketcap {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 8px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.error {
+  color: var(--text-red);
+}
+
+.retry-button,
+.refresh-button {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.retry-button:hover,
+.refresh-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Greeting from '../components/Greeting'
+import CoinPrices from '../components/CoinPrices'
 
 function Dashboard() {
   const [user, setUser] = useState(null)
@@ -38,8 +39,7 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-content">
-        <h2>Dashboard (Coming Soon...)</h2>
-        <p>Your personalized crypto advisor dashboard will appear here!</p>
+        <CoinPrices />
       </div>
     </div>
   )

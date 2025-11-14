@@ -1,6 +1,6 @@
 .dashboard-container {
-  padding: var(--spacing-xl);
-  max-width: 1200px;
+  padding: var(--spacing-md);
+  // max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
 }
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-md);
   padding: var(--spacing-xl);
   // background: var(--bg-card);
   // border-radius: var(--radius-lg);
@@ -49,11 +49,15 @@
 }
 
 .dashboard-content {
-  background: var(--bg-card);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-2xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
+  padding: var(--spacing-md);
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  @media (max-width: 380px) {
+    padding: 0;
+  }
 
   h2 {
     color: var(--text-primary);
