@@ -5,6 +5,7 @@ import {
   AiOutlineDislike,
   AiFillDislike,
 } from 'react-icons/ai'
+import api from '../utils/api'
 
 function VoteButtons({ section, color = 'white', size = 24 }) {
   const [userVote, setUserVote] = useState(0)
@@ -13,28 +14,19 @@ function VoteButtons({ section, color = 'white', size = 24 }) {
     const newVote = userVote === voteValue ? 0 : voteValue
 
     try {
-      const token = localStorage.getItem('token')
-
-      const response = await fetch('http://localhost:3000/api/vote', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          section,
-          vote: newVote,
-        }),
+      const response = await api.put('/vote', {
+        section,
+        vote: newVote,
       })
 
-      if (response.ok) {
+      if (response.status === 200) {
         setUserVote(newVote)
-      } else {
-        alert('Failed to save vote')
+        alert('Vote saved successfully!')
       }
     } catch (error) {
-      console.error('Error saving vote:', error)
-      alert('Error saving vote')
+      alert(
+        `Failed to save vote: ${error.response?.data?.message || error.message}`
+      )
     }
   }
 

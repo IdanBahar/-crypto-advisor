@@ -27,8 +27,7 @@ function FunFacts() {
         setCurrentFact(random)
         setLoading(false)
       })
-      .catch((err) => {
-        console.error(err)
+      .catch(() => {
         setLoading(false)
       })
   }, [])

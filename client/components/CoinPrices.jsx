@@ -18,14 +18,12 @@ const CoinPrices = () => {
       setLoading(true)
       setError(null)
       const response = await getCoinPrices()
-      setCoins(response.data)
 
-      if (response.message) {
-        console.info(response.message)
-      }
+      // Handle axios response wrapper
+      const coinsData = response.data?.data || response.data
+      setCoins(coinsData)
     } catch (err) {
       setError('Failed to fetch coin prices')
-      console.error(err)
     } finally {
       setLoading(false)
     }
@@ -65,7 +63,18 @@ const CoinPrices = () => {
   if (error) {
     return (
       <div className="coin-prices-card">
-        <h2 className="section-title">Coin Prices</h2>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBlock: '10px',
+          }}
+        >
+          <h2 className="section-title">Coin Prices</h2>
+          <VoteButtons section="coinPrices" />
+        </div>
         <div className="error">{error}</div>
         <button onClick={fetchCoins} className="retry-button">
           Retry

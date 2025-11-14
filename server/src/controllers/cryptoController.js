@@ -38,6 +38,7 @@ export const getCoins = async (req, res) => {
     })
   } catch (error) {
     console.error('Get coins error:', error)
+
     res.status(500).json({
       success: false,
       message: 'Failed to fetch coin prices',
