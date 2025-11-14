@@ -3,19 +3,20 @@
 A smart and personalized cryptocurrency dashboard that brings together market data, news, AI insights, and user feedback — all in one clean experience.
 
 ## 🌐 Live Demo
+
 **Deployed App:** _Coming Soon_  
-**GitHub Repo:** _Coming Soon_
+**GitHub Repo:** https://github.com/IdanBahar/-crypto-advisor
 
 ---
 
 ## ✨ Features
 
-- **Live Crypto Prices** — Real-time data for major coins  
-- **Market News Feed** — Updates from trusted crypto sources  
-- **AI Insights** — Auto-generated summaries, trends, and recommendations  
-- **Fun Facts** — TIL highlights from Reddit  
-- **User Authentication** — JWT login & register  
-- **Voting System** — Like/Dislike feedback saved in the database  
+- **Live Crypto Prices** — Real-time data for major coins
+- **Market News Feed** — Updates from trusted crypto sources
+- **AI Insights** — Auto-generated summaries, trends, and recommendations
+- **Fun Facts** — TIL highlights from Reddit
+- **User Authentication** — JWT login & register
+- **Voting System** — Like/Dislike feedback saved in the database
 
 ---
 
@@ -30,6 +31,7 @@ A smart and personalized cryptocurrency dashboard that brings together market da
 ## 🏗 Architecture Overview
 
 ### User Schema (Simplified)
+
 ```js
 {
   name,
@@ -41,13 +43,14 @@ A smart and personalized cryptocurrency dashboard that brings together market da
 ```
 
 ### Main Endpoints
-- POST `/api/auth/register`  
-- POST `/api/auth/login`  
-- GET `/api/user/profile`  
-- PUT `/api/user/preferences`  
-- PUT `/api/vote`  
-- GET `/api/crypto/prices`  
-- GET `/api/crypto/news`  
+
+- POST `/api/auth/register`
+- POST `/api/auth/login`
+- GET `/api/user/profile`
+- PUT `/api/user/preferences`
+- PUT `/api/vote`
+- GET `/api/crypto/prices`
+- GET `/api/crypto/news`
 - GET `/api/ai-insight`
 
 ---
@@ -55,12 +58,14 @@ A smart and personalized cryptocurrency dashboard that brings together market da
 ## 🚀 Setup
 
 ### Backend
+
 ```bash
 cd server
 npm install
 ```
 
 Create `.env`:
+
 ```
 PORT=3000
 MONGODB_URI=your_connection_string
@@ -68,11 +73,13 @@ JWT_SECRET=your_jwt_secret
 ```
 
 Run:
+
 ```bash
 npm run dev
 ```
 
 ### Frontend
+
 ```bash
 cd client
 npm install
@@ -81,16 +88,17 @@ npm run dev
 
 Default URLs:  
 Frontend → http://localhost:5173  
-Backend → http://localhost:3000  
+Backend → http://localhost:3000
 
 ---
 
 ## 🔐 Database
 
-- **DB Name:** crypto_advisor  
-- **Collection:** users  
+- **DB Name:** crypto_advisor
+- **Collection:** users
 
 Example admin query:
+
 ```js
 db.users.find({}, { name: 1, votes: 1 })
 ```
@@ -100,10 +108,11 @@ db.users.find({}, { name: 1, votes: 1 })
 ## 🔑 API Keys & Fallbacks
 
 If APIs hit rate limits, the app falls back to:
-- Cached crypto prices  
-- Cached news  
-- Pre-generated AI insights  
-- Reddit CORS proxy  
+
+- Cached crypto prices
+- Cached news
+- Pre-generated AI insights
+- Reddit CORS proxy
 
 ---
 
@@ -111,34 +120,36 @@ If APIs hit rate limits, the app falls back to:
 
 Each section includes 👍/👎 buttons.  
 Votes:
-1. Change UI instantly  
-2. Sync with backend  
-3. Update MongoDB:  
+
+1. Change UI instantly
+2. Sync with backend
+3. Update MongoDB:
+
 ```js
 { $set: { "votes.funFacts": 1 } }
 ```
-4. Persist on next login  
+
+4. Persist on next login
 
 ---
 
 ## 🤖 AI Usage
 
 AI was used to:
-- Summarize content  
-- Generate insights  
-- Help design API structure  
-- Debug complex issues  
-- Improve documentation  
 
-_All code and core logic were written manually._
+- Summarize content
+- Generate insights
+- Help design API structure
+- Debug complex issues
+- Improve documentation
 
 ---
 
 ## 🌍 Deployment
 
-- Frontend: Vercel / Netlify  
-- Backend: Render / Railway  
-- Database: MongoDB Atlas  
+- Frontend: Vercel / Netlify
+- Backend: Render / Railway
+- Database: MongoDB Atlas
 
 ---
 
