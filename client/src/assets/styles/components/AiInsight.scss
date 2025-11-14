@@ -1,0 +1,59 @@
+.aiInsight-card {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 50, 0.7),
+    rgba(20, 20, 40, 0.7)
+  );
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  grid-column: span 2 / span 2;
+  grid-row-start: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  p {
+    color: var(--text-light);
+  }
+  small {
+    color: var(--text-lighter);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+}
+
+/* Mobile Large */
+@media (max-width: 600px) {
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .aiInsight-card {
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / 4;
+
+    // grid-row: 2 / 2;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+}
+
+/* Desktop */
+@media (max-width: 1280px) {
+}
+
+/* Large Desktop */
+@media (min-width: 1281px) {
+}

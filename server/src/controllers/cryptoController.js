@@ -49,7 +49,6 @@ export const getMarketNews = async (req, res) => {
   try {
     const userId = req.userId
 
-    // שלוף את המשתמש מה-DB
     const user = await findUserById(userId)
 
     if (!user) {

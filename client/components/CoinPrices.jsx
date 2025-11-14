@@ -59,7 +59,7 @@ const CoinPrices = () => {
   if (error) {
     return (
       <div className="coin-prices-card">
-        <h2 className="section-title">💰 Coin Prices</h2>
+        <h2 className="section-title">Coin Prices</h2>
         <div className="error">{error}</div>
         <button onClick={fetchCoins} className="retry-button">
           Retry
@@ -70,39 +70,42 @@ const CoinPrices = () => {
 
   return (
     <div className="coin-prices-card">
-      <h2 className="section-title">💰 Coin Prices</h2>
+      <h2 className="section-title">Coin Prices</h2>
 
-      <div className="coins-grid">
+      <div className="coins-list">
         {Object.entries(coins).map(([coinId, data]) => {
           const change = formatChange(data.usd_24h_change)
 
           return (
-            <div key={coinId} className="coin-item">
+            <div key={coinId} className={`coin-item ${change.className}`}>
               <div className="coin-header">
                 <h3 className="coin-name">
                   {coinId.charAt(0).toUpperCase() + coinId.slice(1)}
                 </h3>
+                <div className="coin-price">{formatPrice(data.usd)}</div>
               </div>
 
-              <div className="coin-price">{formatPrice(data.usd)}</div>
-
-              <div className={`coin-change ${change.className}`}>
-                {change.isPositive ? '▲' : '▼'} {Math.abs(change.value)}%
-                <span className="change-label">24h</span>
-              </div>
-
-              {data.usd_market_cap && (
-                <div className="coin-marketcap">
-                  Cap: {formatPrice(data.usd_market_cap / 1000000000)}B
+              <div className="coin-footer">
+                <div className="coin-change-wrapper">
+                  <span className={`coin-change ${change.className}`}>
+                    {change.isPositive ? '▲' : '▼'} {Math.abs(change.value)}%
+                  </span>
+                  <span className="change-label">24h</span>
                 </div>
-              )}
+
+                {data.usd_market_cap && (
+                  <div className="coin-marketcap">
+                    Cap: {formatPrice(data.usd_market_cap / 1000000000)}B
+                  </div>
+                )}
+              </div>
             </div>
           )
         })}
       </div>
 
       <button onClick={fetchCoins} className="refresh-button">
-        Refresh
+        Update Coins
       </button>
     </div>
   )

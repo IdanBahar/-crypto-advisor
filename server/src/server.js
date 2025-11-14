@@ -6,7 +6,7 @@ import { connectDB } from './config/db.js'
 import authRoutes from './routes/authRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import cryptoRoutes from './routes/cryptoRoutes.js'
-
+import aiInsightRouter from './routes/aiInsightRoutes.js'
 dotenv.config()
 const app = express()
 
@@ -22,6 +22,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/crypto', cryptoRoutes)
+app.use('/api/ai-insight', aiInsightRouter)
 
 const PORT = process.env.PORT || 3000
 

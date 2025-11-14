@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Greeting from '../components/Greeting'
 import CoinPrices from '../components/CoinPrices'
-
+import MarketNews from '../components/MarketNews'
+import AiInsightCard from '../components/AiInsight'
+import FunFacts from '../components/FunFacts'
 function Dashboard() {
   const [user, setUser] = useState(null)
   const navigate = useNavigate()
@@ -40,6 +42,9 @@ function Dashboard() {
 
       <div className="dashboard-content">
         <CoinPrices />
+        <MarketNews />
+        <AiInsightCard />
+        <FunFacts />
       </div>
     </div>
   )

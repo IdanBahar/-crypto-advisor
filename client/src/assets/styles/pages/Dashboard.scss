@@ -51,6 +51,10 @@
 .dashboard-content {
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
   @media (max-width: 768px) {
     padding: 0;
   }
@@ -69,4 +73,38 @@
     font-size: 1.1rem;
     line-height: 1.6;
   }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+}
+
+/* Mobile Large */
+@media (max-width: 600px) {
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  // .dashboard-content {
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: repeat(6, 1fr);
+  //   gap: 20px;
+  // }
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1280px) {
+}
+
+/* Large Desktop */
+@media (min-width: 1281px) {
 }

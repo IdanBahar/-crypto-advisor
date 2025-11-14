@@ -1,0 +1,28 @@
+.fun-facts-card {
+  grid-column-start: 3;
+  grid-row-start: 3;
+}
+
+/* Mobile Large */
+@media (max-width: 600px) {
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .fun-facts-card {
+    grid-row: 4 / 4;
+    grid-column: 1/4;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+}
+
+/* Desktop */
+@media (max-width: 1280px) {
+}
+
+/* Large Desktop */
+@media (min-width: 1281px) {
+}
