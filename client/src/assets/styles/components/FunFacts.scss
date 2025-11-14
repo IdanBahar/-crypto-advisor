@@ -1,6 +1,31 @@
 .fun-facts-card {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 50, 0.7),
+    rgba(20, 20, 40, 0.7)
+  );
+
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
   grid-column-start: 3;
   grid-row-start: 3;
+
+  h3 {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  p {
+    color: var(--text-lighter);
+  }
+  small {
+    color: var(--text-lighter);
+    opacity: 0.7;
+  }
 }
 
 /* Mobile Large */
@@ -12,6 +37,10 @@
   .fun-facts-card {
     grid-row: 4 / 4;
     grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 

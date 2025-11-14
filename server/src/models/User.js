@@ -13,6 +13,7 @@ export const createUser = async (userData) => {
     password: hashedPassword,
     createdAt: new Date(),
     preferences: null,
+    votes: {},
   }
 
   const result = await db.collection('users').insertOne(user)
@@ -43,6 +44,23 @@ export const updateUserPreferences = async (userId, preferences) => {
     {
       $set: {
         preferences,
+        updatedAt: new Date(),
+      },
+    }
+  )
+
+  return result
+}
+
+export const updateUserVote = async (userId, section, vote) => {
+  const db = getDB()
+  const { ObjectId } = await import('mongodb')
+
+  const result = await db.collection('users').updateOne(
+    { _id: new ObjectId(userId) },
+    {
+      $set: {
+        [`votes.${section}`]: vote,
         updatedAt: new Date(),
       },
     }

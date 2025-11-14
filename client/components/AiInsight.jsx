@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchAiInsight } from '../utils/aiInsightApi.js'
-
+import { ClipLoader } from 'react-spinners'
+import VoteButtons from './VoteButtons.jsx'
 function AiInsightCard() {
   const [insight, setInsight] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -25,9 +26,9 @@ function AiInsightCard() {
 
   if (loading) {
     return (
-      <div className="card">
+      <div className="aiInsight-card card">
         <h2>AI Insight of the Day</h2>
-        <p>Loading insight…</p>
+        <ClipLoader color=" #a78bfa" size={50} />
       </div>
     )
   }
@@ -44,7 +45,19 @@ function AiInsightCard() {
 
   return (
     <div className="aiInsight-card card">
-      <h2>AI Insight of the Day</h2>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBlock: '10px',
+          width: '100%',
+        }}
+      >
+        <h2 className="section-title">AI Insight of the Day</h2>
+        <VoteButtons section="aiInsight" />
+      </div>
       <p>{insight?.insight}</p>
       {insight?.generatedAt && (
         <small style={{ opacity: 0.7 }}>

@@ -60,18 +60,6 @@
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(96, 165, 250, 0.3);
   }
-
-  &.bullish {
-    border-left: 3px solid var(--text-green);
-  }
-
-  &.bearish {
-    border-left: 3px solid var(--text-red);
-  }
-
-  &.neutral {
-    border-left: 3px solid rgba(255, 255, 255, 0.3);
-  }
 }
 
 .news-header {

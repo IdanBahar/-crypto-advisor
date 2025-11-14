@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import { getMarketNews } from '../utils/newsApi'
+import { ClipLoader } from 'react-spinners'
+
+import VoteButtons from './VoteButtons'
 
 const MarketNews = () => {
   const [news, setNews] = useState([])
@@ -43,23 +46,14 @@ const MarketNews = () => {
     }
   }
 
-  const getSentiment = (votes) => {
-    if (!votes) return 'neutral'
-    const total = votes.positive + votes.negative
-    if (total === 0) return 'neutral'
-
-    const positivePercent = (votes.positive / total) * 100
-
-    if (positivePercent >= 70) return 'bullish'
-    if (positivePercent <= 30) return 'bearish'
-    return 'neutral'
-  }
-
   if (loading) {
     return (
-      <div className="market-news-card">
+      <div
+        className="market-news-card"
+        style={{ textAlign: 'center', padding: '40px' }}
+      >
         <h2 className="section-title">Market News</h2>
-        <div className="loading">Loading news...</div>
+        <ClipLoader color="#60a5fa" size={50} />
       </div>
     )
   }
@@ -78,20 +72,29 @@ const MarketNews = () => {
 
   return (
     <div className="market-news-card">
-      <h2 className="section-title">Market News</h2>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBlock: '10px',
+        }}
+      >
+        <h2 className="section-title">Market News</h2>
+        <VoteButtons section="marketNews" />
+      </div>
 
       <div className="news-list">
         {Array.isArray(news) && news.length > 0 ? (
           news.map((article) => {
-            const sentiment = getSentiment(article.votes)
-
             return (
               <a
                 key={article.id}
                 href={article.url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`news-item ${sentiment}`}
+                className={`news-item `}
               >
                 <div className="news-header">
                   <span className="news-domain">
@@ -103,24 +106,6 @@ const MarketNews = () => {
                 </div>
 
                 <h3 className="news-title">{article.title}</h3>
-
-                {article.votes && (
-                  <div className="news-footer">
-                    <div className="votes">
-                      <span className="vote-positive">
-                        👍 {article.votes.positive}
-                      </span>
-                      <span className="vote-negative">
-                        👎 {article.votes.negative}
-                      </span>
-                    </div>
-                    <span className={`sentiment-badge ${sentiment}`}>
-                      {sentiment === 'bullish' && '🚀 Bullish'}
-                      {sentiment === 'bearish' && '📉 Bearish'}
-                      {sentiment === 'neutral' && '➡️ Neutral'}
-                    </span>
-                  </div>
-                )}
               </a>
             )
           })

@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import { getCoinPrices } from '../utils/cryptoApi'
+import { ClipLoader } from 'react-spinners'
+
+import VoteButtons from './VoteButtons'
 
 const CoinPrices = () => {
   const [coins, setCoins] = useState({})
@@ -49,9 +52,12 @@ const CoinPrices = () => {
 
   if (loading) {
     return (
-      <div className="coin-prices-card">
+      <div
+        className="coin-prices-card"
+        style={{ textAlign: 'center', padding: '40px' }}
+      >
         <h2 className="section-title">Coin Prices</h2>
-        <div className="loading">Loading prices...</div>
+        <ClipLoader color="#60a5fa" size={50} />
       </div>
     )
   }
@@ -70,7 +76,18 @@ const CoinPrices = () => {
 
   return (
     <div className="coin-prices-card">
-      <h2 className="section-title">Coin Prices</h2>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBlock: '10px',
+        }}
+      >
+        <h2 className="section-title">Coin Prices</h2>
+        <VoteButtons section="coinPrices" />
+      </div>
 
       <div className="coins-list">
         {Object.entries(coins).map(([coinId, data]) => {
