@@ -7,7 +7,7 @@ import {
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Dashboard from '../pages/Dashboard'
-import Onboarding from '../pages/OnBoarding'
+import Onboarding from '../pages/Onboarding'
 
 function App() {
   return (
