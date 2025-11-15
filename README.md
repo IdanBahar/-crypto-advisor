@@ -1,3 +1,6 @@
+# Personal Note
+Thank you for the opportunity. Joining your team would be a meaningful full-circle moment in my professional journey.
+
 # Crypto Advisor Dashboard
 
 A smart and personalized cryptocurrency dashboard that brings together market data, news, AI insights, and user feedback — all in one clean experience.
