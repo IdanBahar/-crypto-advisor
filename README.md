@@ -4,7 +4,7 @@ A smart and personalized cryptocurrency dashboard that brings together market da
 
 ## 🌐 Live Demo
 
-**Deployed App:** _Coming Soon_  
+**Deployed App:** https://crypto-adv.netlify.app
 **GitHub Repo:** https://github.com/IdanBahar/-crypto-advisor
 
 ---
