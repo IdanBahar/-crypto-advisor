@@ -12,14 +12,28 @@ import voteRoutes from './routes/voteRoutes.js'
 dotenv.config()
 const app = express()
 
+const allowedOrigins = [
+  'https://crypto-adv.netlify.app',
+  'http://localhost:5173',
+  'http://localhost:5174',
+  'http://localhost:3000',
+]
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://crypto-adv.netlify.app',
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }
 
 app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 app.use(express.json())
 
 // Routes
