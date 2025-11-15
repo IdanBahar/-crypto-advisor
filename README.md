@@ -97,6 +97,8 @@ Backend → http://localhost:3000
 - **DB Name:** crypto_advisor
 - **Collection:** users
 
+--**Read Only User:** mongodb+srv://moveogroup:moveogroup@crypto-advisor.19bqmfw.mongodb.net/?appName=crypto-advisor
+
 Example admin query:
 
 ```js
