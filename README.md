@@ -147,8 +147,8 @@ AI was used to:
 
 ## 🌍 Deployment
 
-- Frontend: Vercel / Netlify
-- Backend: Render / Railway
+- Frontend:  Netlify
+- Backend: Render
 - Database: MongoDB Atlas
 
 ---
