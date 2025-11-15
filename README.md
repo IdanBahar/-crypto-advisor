@@ -3,7 +3,7 @@ Thank you for the opportunity. Joining your team would be a meaningful full-circ
 
 # Crypto Advisor Dashboard
 
-A smart and personalized cryptocurrency dashboard that brings together market data, news, AI insights, and user feedback — all in one clean experience.
+A smart and personalized cryptocurrency dashboard that brings together market data, news, AI insights, and user feedback - all in one clean experience.
 
 ## 🌐 Live Demo
 
@@ -14,12 +14,12 @@ A smart and personalized cryptocurrency dashboard that brings together market da
 
 ## ✨ Features
 
-- **Live Crypto Prices** — Real-time data for major coins
-- **Market News Feed** — Updates from trusted crypto sources
-- **AI Insights** — Auto-generated summaries, trends, and recommendations
-- **Fun Facts** — TIL highlights from Reddit
-- **User Authentication** — JWT login & register
-- **Voting System** — Like/Dislike feedback saved in the database
+- **Live Crypto Prices** - Real-time data for major coins
+- **Market News Feed** - Updates from trusted crypto sources
+- **AI Insights** - Auto-generated summaries, trends, and recommendations
+- **Fun Facts** - TIL highlights from Reddit
+- **User Authentication** - JWT login & register
+- **Voting System** - Like/Dislike feedback saved in the database
 
 ---
 
